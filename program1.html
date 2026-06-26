@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Layout</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            width:700px;
+            border:3px solid black;
+            padding:10px;
+        }
+
+        .row{
+            display:flex;
+            justify-content:space-between;
+            margin-bottom:20px;
+        }
+
+        .box{
+            width:70px;
+            height:70px;
+            border:3px solid black;
+        }
+
+        .middle{
+            border:3px solid black;
+            padding:12px;
+            display:flex;
+            justify-content:space-between;
+            margin-bottom:20px;
+        }
+
+        .rect{
+            width:260px;
+            height:75px;
+            border:3px solid black;
+            border-radius:15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+
+        <div class="middle">
+            <div class="rect"></div>
+            <div class="rect"></div>
+        </div>
+
+        <div class="row">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>
