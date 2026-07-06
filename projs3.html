@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bulb Glow Effect</title>
+
+    <style>
+        body{
+            margin:0;
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:#111;
+        }
+
+        img{
+            width:220px;
+            cursor:pointer;
+            transition:0.2s;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+
+<img src="bulb-on.jpg" id="bulb" class="glow">
+
+<script>
+
+var bulb = document.getElementById("bulb");
+
+bulb.onmouseover = function()
+{
+    bulb.src = "bulb-off.jpg";
+    bulb.classList.remove("glow");
+}
+
+bulb.onmouseout = function()
+{
+    bulb.src = "bulb-on.jpg";
+    bulb.classList.add("glow");
+}
+
+</script>
+
+</body>
+</html>
