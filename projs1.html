@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Inventory Calculator</title>
+<style>
+    body{
+        font-family: arial;
+        background:white;
+    }
+
+    table{
+        margin:40px auto;
+        background:white;
+       
+    }
+
+    td{
+        padding:12px;
+        
+        border:1px solid black;
+    }
+
+    input{
+        width:120px;
+        padding:6px;
+        text-align:center;
+    }
+
+    .result{
+        background:white;
+    }
+
+    button{
+        width:100%;
+        padding:10px;
+        background:red;
+        color:white;
+        border:none;
+        font-size:16px;
+    }
+
+</style>
+</head>
+
+<body>
+
+
+<table>
+<tr>
+    <td>Purchase Qty</td>
+    <td><input type="number" id="pqty"></td>
+
+    <td>Purchase Price</td>
+    <td><input type="number" id="pprice"></td>
+</tr>
+
+<tr>
+    <td>Sales Qty</td>
+    <td><input type="number" id="sqty"></td>
+
+    <td>Sales Price</td>
+    <td><input type="number" id="sprice"></td>
+</tr>
+
+<tr>
+    <td>Total Purchase</td>
+    <td><input class="result" id="tpurchase" readonly></td>
+
+    <td>Total Sales</td>
+    <td><input class="result" id="tsales" readonly></td>
+</tr>
+
+<tr>
+    <td>Stock Left</td>
+    <td><input class="result" id="stock" readonly></td>
+
+    <td>Value of Stock</td>
+    <td><input class="result" id="vstock" readonly></td>
+</tr>
+
+<tr>
+    <td>Profit</td>
+    <td><input class="result" id="profit" readonly></td>
+
+    <td>Profit %</td>
+    <td><input class="result" id="profitper" readonly></td>
+</tr>
+
+<tr>
+    <td colspan="4">
+        <button onclick="calculate()">Calculate</button>
+    </td>
+</tr>
+
+</table>
+
+<script>
+
+function calculate(){
+
+   var pqty = Number(document.getElementById("pqty").value);
+   var pprice = Number(document.getElementById("pprice").value);
+   var sqty = Number(document.getElementById("sqty").value);
+   var sprice = Number(document.getElementById("sprice").value);
+
+   var totalPurchase = pqty * pprice;
+   var totalSales = sqty * sprice;
+   var stockLeft = pqty - sqty;
+    var valueOfStock = stockLeft * pprice;
+    var profit = totalSales - (sqty * pprice);
+   var profitPercent = (profit / totalPurchase) * 100;
+
+    document.getElementById("tpurchase").value = totalPurchase;
+    document.getElementById("tsales").value = totalSales;
+    document.getElementById("stock").value = stockLeft;
+    document.getElementById("vstock").value = valueOfStock;
+    document.getElementById("profit").value = profit;
+    document.getElementById("profitper").value = profitPercent.toFixed(2) + "%";
+}
+
+</script>
+
+</body>
+</html>
